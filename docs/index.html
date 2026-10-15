@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Latest archaeological discoveries and research on early human cognition - curated news feed">
+  <title>Archaeo News - Early Human Cognition Research</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header>
+    <h1>Archaeo News</h1>
+    <p>Latest discoveries in early human cognition &amp; archaeological research</p>
+  </header>
+
+  <main class="container">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="journal">Journals</button>
+      <button class="filter-btn" data-filter="preprint">Preprints</button>
+      <button class="filter-btn" data-filter="news">News</button>
+    </div>
+
+    <div class="news-grid" id="newsGrid">
+      <div class="loading">Loading archaeological news</div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Powered by open RSS feeds &middot; Updated automatically &middot; <a href="#" id="refreshBtn" style="color: var(--accent);">Refresh</a></p>
+  </footer>
+
+  <script src="scripts/app.js" type="module"></script>
+</body>
+</html>

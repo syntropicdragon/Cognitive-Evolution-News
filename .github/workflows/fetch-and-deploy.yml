@@ -2,14 +2,18 @@ name: Fetch News & Deploy
 
 on:
   schedule:
-    # Run every 12 hours
     - cron: '0 */12 * * *'
   push:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
-  fetch-and-deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,10 +34,15 @@ jobs:
       - name: Build static site
         run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          publish_branch: main
-          keep_files: false
+      - name: Copy to docs folder
+        run: |
+          mkdir -p docs
+          cp -r public/* docs/
+
+      - name: Commit and push docs
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add docs/
+          git diff --cached --quiet || git commit -m "Auto-update news feed - $(date +'%Y-%m-%d %H:%M')"
+          git push
