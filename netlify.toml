@@ -1,0 +1,53 @@
+functionsDirectory = "/opt/build/repo/netlify/functions"
+functionsDirectoryOrigin = "config"
+headersOrigin = "config"
+plugins = []
+redirects = []
+
+[build]
+publish = "/opt/build/repo/public"
+publishOrigin = "config"
+commandOrigin = "config"
+command = "npm run build"
+functions = "/opt/build/repo/netlify/functions"
+
+  [build.environment]
+
+  [build.processing]
+
+    [build.processing.css]
+
+    [build.processing.html]
+
+    [build.processing.images]
+
+    [build.processing.js]
+
+  [build.services]
+
+[database]
+
+  [database.migrations]
+  path = "/opt/build/repo/netlify/database/migrations"
+
+[functions]
+
+  [functions."*"]
+  node_bundler = "esbuild"
+
+[[headers]]
+for = "/*"
+
+  [headers.values]
+  X-Content-Type-Options = "nosniff"
+  Referrer-Policy = "strict-origin-when-cross-origin"
+  X-Frame-Options = "DENY"
+  Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+  Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'"
+
+[[headers]]
+for = "/admin.html"
+
+  [headers.values]
+  X-Robots-Tag = "noindex, nofollow"
+  Cache-Control = "no-store"
