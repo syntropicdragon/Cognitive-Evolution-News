@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Explore the research behind human thought. A growing archive of early human cognition, archaeology, ancient genetics, tools, and symbolic behavior.">
+<link rel="canonical" href="https://grand-sprite-6c3ba3.netlify.app/">
+<title>Cognitive Evolution News · The human story, in research</title>
+<meta property="og:title" content="Cognitive Evolution News"><meta property="og:description" content="A research archive exploring the origins of human thought.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles/style.css">
+<script type="module" src="/scripts/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#archive">Skip to the archive</a>
+<header class="masthead">
+<a class="brand" href="/" aria-label="Cognitive Evolution News home">Cognitive<br><em>Evolution</em> News<span class="brand-mark" aria-hidden="true">◈</span></a>
+<nav aria-label="Main navigation"><a href="#archive" aria-current="page">The archive</a><a href="#about">Our scope</a><a href="/?saved=1" id="savedLink">Saved <span id="savedCount">0</span></a><button class="icon-button" id="themeToggle" aria-label="Switch color theme">◐</button></nav>
+</header>
+<main>
+<section class="hero" aria-labelledby="heroTitle">
+<div class="hero-copy"><p class="eyebrow"><span class="status-dot"></span> An evolving research archive</p><h1 id="heroTitle">Before history.<br>Before words.<br><em>The origins of us.</em></h1><p class="hero-description">Follow the evidence behind human thought, from the first stone tools to the emergence of language, art, and shared worlds.</p><a href="#archive" class="text-link">Explore the research <span aria-hidden="true">↓</span></a></div>
+<div class="hero-aside" aria-hidden="true"><svg class="strata" viewBox="0 0 420 380" fill="none"><path d="M18 290C98 202 111 310 200 215S300 160 402 65M18 320C112 215 118 343 213 242S320 187 402 93M18 350C110 248 140 359 229 273S324 221 402 125M18 260C82 172 100 274 180 185S282 124 402 34M18 230C81 143 89 239 161 153S276 82 402 8M18 198C66 110 71 209 141 122S246 58 361 8M18 169C58 79 59 175 123 91S216 35 314 8M18 140C53 47 40 140 103 60S182 14 263 8M18 111C42 20 30 104 81 30S146 8 210 8" stroke="currentColor" stroke-width="1.2"/><circle cx="200" cy="215" r="7" fill="currentColor"/><circle cx="200" cy="215" r="25" stroke="currentColor" stroke-dasharray="2 5"/><path d="M225 215H350V280" stroke="currentColor"/><text x="255" y="302" fill="currentColor" font-size="10" letter-spacing="2">TRACING OUR ORIGINS</text></svg><div class="field-note"><span>FIELD NOTES / 001</span><p>Every discovery adds a layer<br>to the story of being human.</p></div></div>
+</section>
+<div class="archive-stats" aria-label="Archive statistics"><div><strong id="totalArticles">—</strong><span>articles preserved</span></div><div><strong id="totalSources">—</strong><span>active collections</span></div><div class="freshness"><span>Last successful collection</span><strong id="lastUpdated">Checking the archive…</strong></div></div>
+<section class="archive-section" id="archive" aria-labelledby="archiveTitle">
+<div class="section-heading"><div><p class="eyebrow">THE RESEARCH INDEX</p><h2 id="archiveTitle">A deeper look at our beginnings.</h2></div><a href="/?saved=1" class="text-link">Your reading list ↗</a></div>
+<form id="searchForm" role="search" class="search-form"><label class="sr-only" for="searchInput">Search articles, authors, or exact phrases</label><span aria-hidden="true" class="search-symbol">⌕</span><input id="searchInput" name="q" type="search" placeholder="Search discoveries, ideas, authors…" autocomplete="off"><button type="submit" class="primary">Search archive <span aria-hidden="true">↗</span></button></form>
+<div class="topic-tabs" role="group" aria-label="Filter by topic"><button type="button" data-topic="" aria-pressed="true">All research</button><button type="button" data-topic="cognitive" aria-pressed="false">Cognition & language</button><button type="button" data-topic="fossils" aria-pressed="false">Human origins</button><button type="button" data-topic="tools" aria-pressed="false">Tools & technology</button><button type="button" data-topic="art" aria-pressed="false">Art & symbolism</button><button type="button" data-topic="genetics" aria-pressed="false">Ancient genetics</button><button type="button" data-topic="behavior" aria-pressed="false">Behavior & society</button></div>
+<div class="workspace">
+<aside class="filters"><div class="filter-heading"><h3>Refine the archive</h3><button type="button" id="clearFilters" class="text-button">Reset</button></div>
+<label for="sourceFilter">Source</label><select id="sourceFilter" data-filter="source"><option value="">All sources</option></select>
+<label for="typeFilter">Publication</label><select id="typeFilter" data-filter="type"><option value="">All publications</option><option value="journal">Journal articles</option><option value="preprint">Preprints</option><option value="news">News reports</option></select>
+<details class="advanced" open><summary>Dates & research context</summary><label for="fromFilter">Published after</label><input id="fromFilter" type="date" data-filter="from"><label for="toFilter">Published before</label><input id="toFilter" type="date" data-filter="to"><label for="authorFilter">Author</label><input id="authorFilter" data-filter="author" type="search" placeholder="Author name"><label for="regionFilter">Region</label><select id="regionFilter" data-filter="region"><option value="">All regions</option></select><label for="periodFilter">Period</label><select id="periodFilter" data-filter="period"><option value="">All periods</option></select><label for="speciesFilter">Species</label><select id="speciesFilter" data-filter="species"><option value="">All species</option></select></details>
+<p class="filter-note">Research takes many forms. Preprints have not been verified as peer reviewed. Context tags are indicative and may be corrected.</p>
+</aside>
+<div class="results"><div class="results-toolbar"><p id="resultCount" role="status" aria-live="polite">Opening the archive…</p><div class="view-tools"><label class="sr-only" for="sortSelect">Sort articles</label><select id="sortSelect"><option value="newest">Newest published</option><option value="added">Recently added</option><option value="oldest">Oldest published</option><option value="relevance">Search relevance</option></select><div class="view-switch" role="group" aria-label="Article layout"><button id="listView" type="button" aria-label="Compact list view" aria-pressed="true">☰</button><button id="gridView" type="button" aria-label="Card view" aria-pressed="false">⊞</button></div></div></div><div id="filterChips" class="filter-chips" role="group" aria-label="Active filters"></div>
+<div id="newsGrid" class="news-list" aria-busy="true"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+<nav class="pagination" id="pagination" aria-label="Archive pages"><button type="button" id="prevPage">← Previous</button><span id="pageInfo">Page 1</span><button type="button" id="nextPage">Next →</button></nav>
+</div></div></section>
+<section class="about-section" id="about"><p class="eyebrow">THE SCOPE OF THIS COLLECTION</p><div><h2>The long story of<br><em>how we became us.</em></h2><p>This archive follows early human cognitive evolution and the archaeology, paleoanthropology, and anthropology that help explain it. We collect source summaries and scholarly metadata, preserve links to original publications, and keep older discoveries available.</p><p>Direct matches enter the archive automatically. Broader archaeology goes to an editorial review queue. Off-topic results are excluded. We preserve abstracts and permitted summaries, not full publications; all original work belongs to its authors and publishers.</p><a href="/topics/cognitive" class="text-link">Browse cognition & language ↗</a></div></section>
+</main>
+<footer><span>© <span id="year">2026</span> Cognitive Evolution News</span><span>A growing archive · Hosted on Netlify</span><div><a href="/admin.html">Editorial desk</a><a href="https://github.com/syntropicdragon/Cognitive-Evolution-News" target="_blank" rel="noopener noreferrer">Source ↗</a></div></footer>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<noscript><p class="noscript">Enable JavaScript to search the archive, or <a href="/topics/fossils">browse human origins</a> and <a href="/topics/cognitive">cognition research</a> directly.</p></noscript>
+</body></html>
