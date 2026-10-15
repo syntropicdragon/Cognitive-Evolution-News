@@ -3,32 +3,195 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Latest archaeological discoveries and research on early human cognition - curated news feed">
-  <title>Archaeo News - Early Human Cognition Research</title>
+  <meta name="description" content="Latest archaeological discoveries and research on early human cognition and cognitive evolution">
+  <title>Cognitive Evolution News - Early Human Cognition Research</title>
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <header>
-    <h1>Archaeo News</h1>
-    <p>Latest discoveries in early human cognition &amp; archaeological research</p>
+  <!-- Navigation Bar -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="/" class="logo">
+          <span class="logo-icon">&#128218;</span>
+          <span class="logo-text">Cognitive Evolution News</span>
+        </a>
+        
+        <div class="nav-links">
+          <a href="/" class="nav-link active">Home</a>
+          <div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">Categories</button>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item" data-category="all">All</a>
+              <a href="#" class="dropdown-item" data-category="cognitive">Cognitive Studies</a>
+              <a href="#" class="dropdown-item" data-category="fossils">Fossils & Remains</a>
+              <a href="#" class="dropdown-item" data-category="tools">Tools & Technology</a>
+              <a href="#" class="dropdown-item" data-category="art">Art & Symbolism</a>
+              <a href="#" class="dropdown-item" data-category="genetics">Genetics</a>
+              <a href="#" class="dropdown-item" data-category="behavior">Behavior & Society</a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">Sources</button>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item" data-source="all">All Sources</a>
+              <a href="#" class="dropdown-item" data-source="arxiv">arXiv</a>
+              <a href="#" class="dropdown-item" data-source="sciencedaily">ScienceDaily</a>
+              <a href="#" class="dropdown-item" data-source="sapiens">SAPIENS</a>
+              <a href="#" class="dropdown-item" data-source="heritagedaily">HeritageDaily</a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">Time</button>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item" data-time="all">All Time</a>
+              <a href="#" class="dropdown-item" data-time="day">Last 24 Hours</a>
+              <a href="#" class="dropdown-item" data-time="week">Last Week</a>
+              <a href="#" class="dropdown-item" data-time="month">Last Month</a>
+            </div>
+          </div>
+          <a href="#about" class="nav-link">About</a>
+        </div>
+
+        <div class="nav-actions">
+          <div class="search-container">
+            <input 
+              type="text" 
+              id="searchInput" 
+              class="search-input" 
+              placeholder="Search articles..."
+              autocomplete="off"
+            >
+            <span class="search-icon">&#128269;</span>
+          </div>
+          <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">
+            <span class="theme-icon">&#127774;</span>
+          </button>
+        </div>
+
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+          <span>&#9776;</span>
+        </button>
+      </div>
+    </nav>
   </header>
 
-  <main class="container">
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="journal">Journals</button>
-      <button class="filter-btn" data-filter="preprint">Preprints</button>
-      <button class="filter-btn" data-filter="news">News</button>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-content">
+      <a href="/" class="mobile-link">Home</a>
+      <div class="mobile-section">
+        <span class="mobile-section-title">Categories</span>
+        <a href="#" class="mobile-link" data-category="all">All</a>
+        <a href="#" class="mobile-link" data-category="cognitive">Cognitive Studies</a>
+        <a href="#" class="mobile-link" data-category="fossils">Fossils & Remains</a>
+        <a href="#" class="mobile-link" data-category="tools">Tools & Technology</a>
+        <a href="#" class="mobile-link" data-category="art">Art & Symbolism</a>
+        <a href="#" class="mobile-link" data-category="genetics">Genetics</a>
+        <a href="#" class="mobile-link" data-category="behavior">Behavior & Society</a>
+      </div>
+      <div class="mobile-section">
+        <span class="mobile-section-title">Sources</span>
+        <a href="#" class="mobile-link" data-source="all">All Sources</a>
+        <a href="#" class="mobile-link" data-source="arxiv">arXiv</a>
+        <a href="#" class="mobile-link" data-source="sciencedaily">ScienceDaily</a>
+        <a href="#" class="mobile-link" data-source="sapiens">SAPIENS</a>
+        <a href="#" class="mobile-link" data-source="heritagedaily">HeritageDaily</a>
+      </div>
+      <div class="mobile-section">
+        <span class="mobile-section-title">Time Range</span>
+        <a href="#" class="mobile-link" data-time="all">All Time</a>
+        <a href="#" class="mobile-link" data-time="day">Last 24 Hours</a>
+        <a href="#" class="mobile-link" data-time="week">Last Week</a>
+        <a href="#" class="mobile-link" data-time="month">Last Month</a>
+      </div>
+      <a href="#about" class="mobile-link">About</a>
     </div>
+  </div>
 
-    <div class="news-grid" id="newsGrid">
-      <div class="loading">Loading archaeological news</div>
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1 class="hero-title">Latest Research on Early Human Cognition</h1>
+        <p class="hero-subtitle">Discover the newest archaeological findings and cognitive evolution studies</p>
+        <div class="hero-stats" id="heroStats">
+          <span class="stat"><span class="stat-number" id="totalArticles">0</span> articles</span>
+          <span class="stat"><span class="stat-number" id="totalSources">0</span> sources</span>
+          <span class="stat"><span class="stat-number" id="lastUpdated">Never</span> updated</span>
+        </div>
+      </section>
+
+      <!-- Filters Bar -->
+      <div class="filters-bar" id="filtersBar">
+        <div class="filter-chips" id="filterChips">
+          <!-- Chips will be added dynamically -->
+        </div>
+        <button class="clear-filters-btn" id="clearFiltersBtn">Clear All</button>
+      </div>
+
+      <!-- News Grid -->
+      <div class="news-grid" id="newsGrid">
+        <div class="loading-skeleton">
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination" id="pagination">
+        <button class="page-btn" id="prevPage" disabled>&larr; Previous</button>
+        <span class="page-info" id="pageInfo">Page 1 of 1</span>
+        <button class="page-btn" id="nextPage" disabled>Next &rarr;</button>
+      </div>
     </div>
   </main>
 
-  <footer>
-    <p>Powered by open RSS feeds &middot; Updated automatically &middot; <a href="#" id="refreshBtn" style="color: var(--accent);">Refresh</a></p>
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <h2>About Cognitive Evolution News</h2>
+      <div class="about-content">
+        <p>This project aggregates the latest research and discoveries in early human cognition, archaeological findings, and paleoanthropology. We pull from multiple sources including arXiv, ScienceDaily, SAPIENS, and HeritageDaily to bring you the most relevant and up-to-date information on human cognitive evolution.</p>
+        <p>Our focus areas include cognitive studies, fossil discoveries, ancient tools and technology, symbolic art, genetic research, and behavioral studies of early human societies.</p>
+        <p><strong>Sources:</strong> arXiv, ScienceDaily, SAPIENS, HeritageDaily, PLOS ONE, and more.</p>
+        <p><strong>Updates:</strong> Every 12 hours automatically</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Cognitive Evolution News</h3>
+          <p>Latest research on early human cognition</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <a href="#">Home</a>
+          <a href="#about">About</a>
+        </div>
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <a href="https://github.com/syntropicdragon/Cognitive-Evolution-News" target="_blank">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Cognitive Evolution News. All rights reserved.</p>
+        <p>Powered by GitHub Pages & Open RSS Feeds</p>
+      </div>
+    </div>
   </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <span class="toast-message" id="toastMessage"></span>
+  </div>
 
   <script src="scripts/app.js" type="module"></script>
 </body>
