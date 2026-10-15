@@ -1,0 +1,31 @@
+{
+  "name": "archaeo-news",
+  "version": "1.0.0",
+  "description": "Archaeological news feed - latest discoveries in early human cognition",
+  "type": "module",
+  "scripts": {
+    "fetch": "node fetch-rss.js",
+    "build": "node fetch-rss.js && cp -r src/* public/",
+    "start": "npx serve public",
+    "dev": "npx concurrently \"npx nodemon --watch fetch-rss.js --ext js --exec node fetch-rss.js\" \"npx serve public\""
+  },
+  "keywords": [
+    "archaeology",
+    "news",
+    "research",
+    "early-human",
+    "cognition"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "date-fns": "^3.3.1",
+    "fast-xml-parser": "^4.3.3",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.2",
+    "serve": "^14.2.1"
+  }
+}
